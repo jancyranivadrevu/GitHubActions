@@ -1,0 +1,94 @@
+name: Selenium Script Example
+'on':
+  - push
+jobs:
+  myJob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+      - name: Install Selenium
+        run: |
+          pip install selenium
+      - name: Run Python Script
+        run: >
+          python - << EOF
+
+          import time
+
+          from selenium import webdriver
+
+          from selenium.webdriver.chrome.service import Service
+
+          from selenium.webdriver.common.by import By
+
+          from selenium.webdriver.support.ui import WebDriverWait
+
+          from selenium.webdriver.support import expected_conditions as EC
+
+          from selenium.webdriver.common.action_chains import ActionChains
+
+          from selenium.webdriver.support.ui import Select
+
+
+          # Set the path to the ChromeDriver executable
+
+          serv_obj =
+          Service(r"C:\Users\sande\PycharmProjects\seleniumlogs\chromedriver\win32\chromedriver.exe")
+
+
+          # Launch Chrome WebDriver
+
+          driver = webdriver.Chrome(service=serv_obj)
+
+          driver.get("https://hamaralabs-dev.web.app")
+
+
+          driver.maximize_window()
+
+
+          # Enter email
+
+          email_input = WebDriverWait(driver,
+          10).until(EC.presence_of_element_located((By.XPATH,
+          "//input[contains(@name,'email')]")))
+
+          email_input.send_keys("hamaralabs.jancy@gmail.com")
+
+
+          # Enter password
+
+          password_input = WebDriverWait(driver,
+          10).until(EC.presence_of_element_located((By.XPATH,
+          "//input[contains(@name,'password')]")))
+
+          password_input.send_keys("atl@123")
+
+          #text xpath
+
+          show_password_input = WebDriverWait(driver,
+          10).until(EC.presence_of_element_located((By.XPATH,
+          "//label[text()='Show Password']")))
+
+          show_password_input.click()
+
+          print("showing password")
+
+          time.sleep(2)
+
+          # Click login button
+
+          login_button = WebDriverWait(driver,
+          10).until(EC.element_to_be_clickable((By.XPATH,
+          "//div[@id='root']/div/form/center[2]/button")))
+
+          login_button.click()
+
+
+          print("Login successful")
+
+          EOF

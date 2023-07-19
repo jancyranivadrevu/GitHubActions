@@ -1,0 +1,20 @@
+name: Print Even Numbers
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-even-numbers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Print Even Numbers
+        run: |
+          for ((num=1; num<=100; num++)); do
+            if ((num % 2 == 0)); then
+              echo $num
+            fi
+          done

@@ -1,0 +1,16 @@
+---
+name: school
+on:
+  push: null
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo "school!"
+name1: DPS
+principal: Someone
+Students:
+  rno: 12
+  name1: Kunal Kuswaha
+  marks: 67

@@ -1,0 +1,59 @@
+student: !!seq
+  -marks
+  -name
+  -roll_no
+
+#like this also
+cities: [new delhi, mumbai]
+#some of the keys of the seq will be empty
+#sparse seq
+sparse seq:
+ - hey
+ - how
+ -
+ - Null
+ - sup
+ #nested sequences
+ -
+  - mango
+  - apple
+  - banana
+ -
+  - marks
+  - roll num
+  - date
+#key:value pairs are called maps
+#!!map
+#nested mappings:map within map
+name: kunal kushwala
+role:
+  age: 18
+  job: student
+#same as
+name1: kunal kushwala
+role1: {age: 18, job: student}
+
+#pair:keys have duplicate values
+pair example: !!pairs
+  - job: student
+  - job: teacher
+    # same as
+pairexample: !!pair [job:student, job: teacher]
+ #this will be array of hashtables
+
+#!!set will allow you to have unque values
+names: !!set
+  ? kunal
+  ? apoorv
+  ? rahul
+#dictionary  !!omap
+People: !!omap
+  - kunal:
+      name: kunal kushwala
+      age: 18
+      height : 678
+  - Rahul:
+      name: Rahul seety
+      age: 45
+      height: 456
+#reusing some properties using anchors(what do we want to copy,where do we want to copy)

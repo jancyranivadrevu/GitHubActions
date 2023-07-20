@@ -1,0 +1,47 @@
+name: basic1
+on:
+  push: null
+student: -marks -name -roll_no
+cities:
+  - new delhi
+  - mumbai
+sparse seq:
+  - hey
+  - how
+  - null
+  - null
+  - sup
+  - - mango
+    - apple
+    - banana
+  - - marks
+    - roll num
+    - date
+name1: kunal kushwalaa
+role:
+  age: 18
+  job: student
+name2: kunal kushwala
+role1:
+  age: 18
+  job: student
+pair example:
+  - job: student
+  - job: teacher
+pairexample:
+  - job:student
+  - job: teacher
+names:
+  - kunal
+  - apoorv
+  - rahul
+People:
+  kunal:
+    name: kunal kushwala
+    age: 18
+    height: 678
+  Rahul:
+    name: Rahul seety
+    age: 45
+    height: 456
+likings: null
